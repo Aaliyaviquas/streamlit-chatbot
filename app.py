@@ -1,8 +1,4 @@
 import streamlit as st
-st.title("Streamlit Chatbot")
-import os 
-os.environ["GOOGLE_API_KEY"]=st.secrets["GOOGLE_API_KEY"]
-import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
@@ -42,4 +38,4 @@ if user_input:
         st.session_state.chat_history.append(AIMessage(content=result.content))
         
         # Refresh the page to show the new messages
-        st.experimental_rerun()
+        st.rerun()
